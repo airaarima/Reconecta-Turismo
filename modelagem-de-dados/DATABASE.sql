@@ -8,7 +8,6 @@ CREATE TABLE usuarios (
 	RG VARCHAR(10) UNIQUE,
 	data_nascimento DATE,
 	email VARCHAR(50),
-    senha varchar(6),
 	rua VARCHAR(20),
 	numero VARCHAR(6),
 	bairro VARCHAR(20),
