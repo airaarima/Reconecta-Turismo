@@ -9,10 +9,6 @@ public class Passagens {
     private LocalDate dataPartida;
     private LocalDate dataRetorno;
     private int quantidadePassagens;
-    private String nomeAcompanhante;
-    private String CPFAcompanhante;
-    private String RGAcompanhante;
-    private LocalDate dataNascimento;
 
     public Passagens(){
 
@@ -64,34 +60,4 @@ public class Passagens {
     public void setQuantidadePassagens(int quantidadePassagens) {
         this.quantidadePassagens = quantidadePassagens;
     }
-
-    public String getNomeAcompanhante() {
-        return this.nomeAcompanhante;
-    }
-    public void setNomeAcompanhante(String nomeAcompanhante) {
-        this.nomeAcompanhante = nomeAcompanhante;
-    }
-
-    public String getCPFAcompanhante() {
-        return this.CPFAcompanhante;
-    }
-    public void setCPFAcompanhante(String CPFAcompanhante) {
-        this.CPFAcompanhante = CPFAcompanhante;
-    }
-
-    public String getRGAcompanhante() {
-        return this.RGAcompanhante;
-    }
-    public void setRGAcompanhante(String RGAcompanhante) {
-        this.RGAcompanhante = RGAcompanhante;
-    }
-
-    public LocalDate getDataNascimento() {
-        return this.dataNascimento;
-    }
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-    
-
 }

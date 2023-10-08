@@ -16,6 +16,7 @@ public class UsuariosDAO {
     
     public void criarUsuario()throws SQLException{
         Scanner input = new Scanner(System.in);
+        String sql = "INSERT INTO USUARIOS (nome_completo, CPF, RG, data_nascimento, email, rua, numero, bairro, cidade, UF) VALUES (?,?,?,?,?,?,?,?,?,?)";
         
         System.out.println("Nome completo: ");
         String nome = input.nextLine();
@@ -26,7 +27,7 @@ public class UsuariosDAO {
         System.out.println("Digite seu RG (somente números): ");
         String RG = input.nextLine();
 
-        System.out.println("Data de nascimento (AAAA-MM-DD): ");
+        System.out.println("Data de nascimento (digite no formato AAAA-MM-DD): ");
         String dataNascimentoString = input.nextLine();
         LocalDate dataNascimento = LocalDate.parse(dataNascimentoString);
 
@@ -43,11 +44,9 @@ public class UsuariosDAO {
         System.out.println("Cidade: ");
         String cidade = input.nextLine();
         System.out.println("UF: ");
-        String uf = input.nextLine();
+        String uf = input.next();
 
         Usuarios usuario1 = new Usuarios(nome, CPF, RG, dataNascimento, email, rua, numero, bairro, cidade, uf);
-        
-        String sql = "INSERT INTO USUARIOS (nome_completo, CPF, RG, data_nascimento, email, senha, rua, numero, bairro, cidade, UF) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
         try {
             conexao=Conexao.criarConexao();
@@ -83,11 +82,12 @@ public class UsuariosDAO {
 
     public void excluirUsuario()throws SQLException{
         Scanner input = new Scanner(System.in);
+        String sql = "DELETE FROM USUARIOS WHERE CPF = ?";
 
         System.out.println("Digite o CPF do usuario que você deseja excluir");
-        String CPF_exclusao = input.nextLine();
+        String CPF_exclusao = input.next();
 
-        String sql = "DELETE FROM USUARIOS WHERE CPF = ?";
+        
 
         try {
             conexao=Conexao.criarConexao();
@@ -132,7 +132,7 @@ public class UsuariosDAO {
         System.out.println("Digite seu RG (somente números): ");
         String RG = input.nextLine();
 
-        System.out.println("Data de nascimento (AAAA-MM-DD): ");
+        System.out.println("Data de nascimento (digite no formato AAAA-MM-DD): ");
         String dataNascimentoString = input.nextLine();
         LocalDate dataNascimento = LocalDate.parse(dataNascimentoString);
 
@@ -149,7 +149,7 @@ public class UsuariosDAO {
         System.out.println("Cidade: ");
         String cidade = input.nextLine();
         System.out.println("UF: ");
-        String uf = input.nextLine();
+        String uf = input.next();
 
         Usuarios usuario1 = new Usuarios(nome, CPF, RG, dataNascimento, email, rua, numero, bairro, cidade, uf);
 
@@ -203,7 +203,7 @@ public class UsuariosDAO {
                 usuario.setCidade(r.getString("cidade"));
                 usuario.setUF(r.getString("UF"));
 
-                System.out.printf("Nome: %s\nCPF: %s\nE-mail: %s\nCidade: %s - UF: %s", usuario.getNome(),usuario.getCPF(),usuario.getEmail(),usuario.getCidade(),usuario.getUF());
+                System.out.printf("Nome: %s\nCPF: %s\nE-mail: %s\nCidade: %s - UF: %s\n\n", usuario.getNome(),usuario.getCPF(),usuario.getEmail(),usuario.getCidade(),usuario.getUF());
             }
         } catch (Exception ex) {
             System.out.println("Ocorreu um erro\n"+ex.getMessage());

@@ -27,10 +27,10 @@ public class PassagensDAO {
 
         System.out.println("Qual o local de partida? ");
         String local_partida = input.nextLine();
-        System.out.println("Qual a data de partida? ");
+        System.out.println("Qual a data de partida? (digite no formato AAAA-MM-DD)");
         String dataPartidaString = input.nextLine();
         LocalDate data_partida = LocalDate.parse(dataPartidaString);
-        System.out.println("Qual a data de retorno?");
+        System.out.println("Qual a data de retorno? (digite no formato AAAA-MM-DD)");
         String dataRetornoString = input.nextLine();
         LocalDate data_retorno = LocalDate.parse(dataRetornoString);
         System.out.println("Quantas passagens?");
@@ -83,11 +83,7 @@ public class PassagensDAO {
         }
     }
 
-    public void adicionarAcompanhante(){
-//fazer condição quantidade_passagens > 1
-    }
-
-    public void consultarPassagem()throws SQLException{//mostrar acompanhante
+    public void mostrarPassagens()throws SQLException{
         String sql = "SELECT usuarios.nome_completo, destinos.cidade, passagens.local_partida, passagens.data_partida, passagens.data_retorno, passagens.quantidade_passagens FROM passagens INNER JOIN usuarios ON passagens.id_usuario = usuarios.id_usuario INNER JOIN destinos ON passagens.id_destino = destinos.id_destino;";
 
         try {
@@ -109,7 +105,7 @@ public class PassagensDAO {
                 passagem.setDataRetorno(r.getDate("data_retorno").toLocalDate());
                 passagem.setQuantidadePassagens(r.getInt("quantidade_passagens"));
 
-                System.out.printf("Quantidade de passagens: %d\nUsuário: %s\nDestino: %s\nLocal de partida: %s\nData partida: %s - Data Retorno: %s", passagem.getQuantidadePassagens(),passagem.getUsuario().getNome(), passagem.getDestino().getCidade(),passagem.getLocalPartida(),passagem.getDataPartida(),passagem.getDataRetorno());
+                System.out.printf("Quantidade de passagens: %d\nUsuário: %s\nDestino: %s\nLocal de partida: %s\nData partida: %s - Data Retorno: %s\n\n", passagem.getQuantidadePassagens(),passagem.getUsuario().getNome(), passagem.getDestino().getCidade(),passagem.getLocalPartida(),passagem.getDataPartida(),passagem.getDataRetorno());
             }
         } catch (Exception ex) {
             System.out.println("Ocorreu um erro\n"+ex.getMessage());

@@ -19,7 +19,7 @@ CREATE TABLE destinos (
 	id_destino INT PRIMARY KEY auto_increment,
 	valor DECIMAL,
 	pais VARCHAR(15),
-	cidade VARCHAR(20)
+	cidade VARCHAR(30)
 );
 
 CREATE TABLE passagens (
@@ -29,11 +29,6 @@ CREATE TABLE passagens (
 	data_partida DATE,
 	data_retorno DATE,
 	quantidade_passagens INT,
-	valor_total DECIMAL,
-	nome_acompanhante VARCHAR(30),
-	CPF_acompanhante VARCHAR(11) UNIQUE,
-	RG_acompanhante VARCHAR(10) UNIQUE,
-	data_nascimento DATE,
 	foreign key (id_usuario) references usuarios(id_usuario),
 	foreign key (id_destino) references destinos(id_destino)
 );
@@ -43,6 +38,6 @@ CREATE TABLE fale_conosco (
 	nome_completo VARCHAR(30),
 	CPF VARCHAR(11),
 	email VARCHAR(30),
-	assunto_contato VARCHAR(30),
+	assunto_contato VARCHAR(50),
 	mensagem TEXT(250)
 );

@@ -24,7 +24,7 @@ public class DestinosDAO {
         System.out.println("Qual o valor unitário da viagem até o destino? R$");
         double valor = input.nextDouble();
 
-        Destinos destino = new Destinos(valor,cidade,pais);
+        Destinos destino = new Destinos(valor,pais,cidade);
 
         try {
             conexao=Conexao.criarConexao();
@@ -97,7 +97,7 @@ public class DestinosDAO {
         String sql = "DELETE FROM DESTINOs WHERE cidade = ?";
 
         System.out.println("Qual o nome da cidade? ");
-        String cidade_exclusao = input.nextLine().toUpperCase();
+        String cidade_exclusao = input.next().toUpperCase();
 
         try {
             conexao=Conexao.criarConexao();
@@ -140,7 +140,7 @@ public class DestinosDAO {
                 destino.setPais(r.getString("pais"));
                 destino.setValor(r.getDouble("valor"));
 
-                System.out.printf("%s - %s R$ %.2f",destino.getCidade(),destino.getPais(),destino.getValor());
+                System.out.printf("%s - %s R$ %.2f\n\n",destino.getCidade(),destino.getPais(),destino.getValor());
             }
         } catch (Exception ex) {
             System.out.println("Ocorreu um erro\n"+ex.getMessage());
