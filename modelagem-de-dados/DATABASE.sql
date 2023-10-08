@@ -19,8 +19,7 @@ CREATE TABLE destinos (
 	id_destino INT PRIMARY KEY auto_increment,
 	valor DECIMAL,
 	pais VARCHAR(15),
-	cidade VARCHAR(20),
-	promocao BIT NOT NULL
+	cidade VARCHAR(20)
 );
 
 CREATE TABLE passagens (
@@ -31,7 +30,6 @@ CREATE TABLE passagens (
 	data_retorno DATE,
 	quantidade_passagens INT,
 	valor_total DECIMAL,
-	tipo_viagem ENUM('somente ida', 'ida e volta'),
 	nome_acompanhante VARCHAR(30),
 	CPF_acompanhante VARCHAR(11) UNIQUE,
 	RG_acompanhante VARCHAR(10) UNIQUE,
