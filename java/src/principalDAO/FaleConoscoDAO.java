@@ -11,7 +11,4 @@ public class FaleConoscoDAO {
     private Connection conexao = null;
     private PreparedStatement pstm = null;
 
-    public void comprarPassagem(Usuarios usuario, Destinos destino)throws SQLException{
-        
-    }
 }

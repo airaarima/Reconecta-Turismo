@@ -2,6 +2,7 @@ package principal;
 import java.time.LocalDate;
 
 public class Usuarios {
+    private int id_usuario;
     private String nome;
     private String CPF;
     private String RG;
@@ -13,6 +14,9 @@ public class Usuarios {
     private String cidade;
     private String UF;
 
+    public Usuarios(){
+        
+    }
     public Usuarios(String nome, String CPF, String RG, LocalDate dataNascimento, String email, String rua, String numero, String bairro, String cidade, String UF){
         this.nome=nome;
         this.CPF=CPF;
@@ -25,6 +29,14 @@ public class Usuarios {
         this.cidade=cidade;
         this.UF=UF;
     }
+
+    public int getId(){
+        return this.id_usuario;
+    }
+    public void setId(int id_usuario){
+        this.id_usuario=id_usuario;
+    }
+
     public String getNome() {
         return this.nome;
     }

@@ -1,8 +1,9 @@
 package principal;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.Scanner;
 
+import principalDAO.DestinosDAO;
+import principalDAO.PassagensDAO;
 import principalDAO.UsuariosDAO;
 
 public class Main {
@@ -11,10 +12,18 @@ public class Main {
         System.out.println("========== Bem vindo a REConecta Turismo ==========\n\"========== Ficamos felizes com sua presença! ==========");
         
         UsuariosDAO usuarioDAO = new UsuariosDAO();
+        DestinosDAO destinoDAO = new DestinosDAO();
+        PassagensDAO passagemDAO = new PassagensDAO();
         //usuarioDAO.adicionarUsuario();
         //usuarioDAO.excluirUsuario();
-        usuarioDAO.atualizarUsuario();
-
-
+        // usuarioDAO.atualizarUsuario();
+        // usuarioDAO.mostrarUsuarios();
+        // destinoDAO.adicionarDestino();
+        // destinoDAO.atualizarDestino();
+        // destinoDAO.removerDestino();
+        // destinoDAO.mostrarDestinos();
+        // passagemDAO.comprarPassagem();
+        passagemDAO.consultarPassagem();
+        input.close();
     }
 }

@@ -1,10 +1,26 @@
 package principal;
 
 public class Destinos {
+    private int id_destino;
     private double valor;
     private String pais;
     private String cidade;
-    private boolean promocao;
+
+    public Destinos(){
+        
+    }
+    public Destinos(double valor, String pais, String cidade){
+        this.valor=valor;
+        this.pais=pais;
+        this.cidade=cidade;
+    }
+
+    public int getId(){
+        return this.id_destino;
+    }
+    public void setId(int id_destino){
+        this.id_destino=id_destino;
+    }
 
     public double getValor() {
         return this.valor;
@@ -26,15 +42,4 @@ public class Destinos {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-
-    public boolean isPromocao() {
-        return this.promocao;
-    }
-    public boolean getPromocao() {
-        return this.promocao;
-    }
-    public void setPromocao(boolean promocao) {
-        this.promocao = promocao;
-    }
-
 }

@@ -2,6 +2,7 @@ package principalDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class UsuariosDAO {
     private Connection conexao = null;
     private PreparedStatement pstm = null;
     
-    public void adicionarUsuario()throws SQLException{
+    public void criarUsuario()throws SQLException{
         Scanner input = new Scanner(System.in);
         
         System.out.println("Nome completo: ");
@@ -63,7 +64,7 @@ public class UsuariosDAO {
             pstm.setString(9, usuario1.getCidade());
             pstm.setString(10, usuario1.getUF());
 
-            pstm.executeUpdate();
+            pstm.execute();
             System.out.println("Usuário criado com sucesso!");
             System.out.println("Nome: "+ usuario1.getNome() + " - CPF:" + usuario1.getCPF());
 
@@ -72,6 +73,7 @@ public class UsuariosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
+                input.close();
             }
             if (conexao!=null){
                 conexao.close();
@@ -106,6 +108,7 @@ public class UsuariosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
+                input.close();
             }
             if (conexao!=null){
                 conexao.close();
@@ -176,6 +179,7 @@ public class UsuariosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
+                input.close();
             }
             if (conexao!=null){
                 conexao.close();
@@ -190,8 +194,17 @@ public class UsuariosDAO {
         try {
             conexao=Conexao.criarConexao();
             pstm=conexao.prepareStatement(sql);
- 
+            ResultSet r = pstm.executeQuery();
+            while(r.next()){
+                Usuarios usuario = new Usuarios();
+                usuario.setNome(r.getString("nome_completo"));
+                usuario.setCPF(r.getString("CPF"));
+                usuario.setEmail(r.getString("email"));
+                usuario.setCidade(r.getString("cidade"));
+                usuario.setUF(r.getString("UF"));
 
+                System.out.printf("Nome: %s\nCPF: %s\nE-mail: %s\nCidade: %s - UF: %s", usuario.getNome(),usuario.getCPF(),usuario.getEmail(),usuario.getCidade(),usuario.getUF());
+            }
         } catch (Exception ex) {
             System.out.println("Ocorreu um erro\n"+ex.getMessage());
         } finally {
