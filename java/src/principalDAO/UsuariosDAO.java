@@ -72,7 +72,6 @@ public class UsuariosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
-                input.close();
             }
             if (conexao!=null){
                 conexao.close();
@@ -108,7 +107,6 @@ public class UsuariosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
-                input.close();
             }
             if (conexao!=null){
                 conexao.close();
@@ -179,7 +177,6 @@ public class UsuariosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
-                input.close();
             }
             if (conexao!=null){
                 conexao.close();

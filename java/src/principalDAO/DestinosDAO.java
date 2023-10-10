@@ -42,7 +42,6 @@ public class DestinosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
-                input.close();
             }
             if (conexao!=null){
                 conexao.close();
@@ -84,7 +83,6 @@ public class DestinosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
-                input.close();
             }
             if (conexao!=null){
                 conexao.close();
@@ -118,7 +116,6 @@ public class DestinosDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
-                input.close();
             }
             if (conexao!=null){
                 conexao.close();

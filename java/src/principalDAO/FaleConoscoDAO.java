@@ -47,7 +47,6 @@ public class FaleConoscoDAO {
         } finally {
             if(pstm!=null){
                 pstm.close();
-                input.close();
             }
             if (conexao!=null){
                 conexao.close();
