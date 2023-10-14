@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.mensagem{
+    background-color: rgb(54, 101, 70);
+    color: white;
+    padding: 50px;
+}
+.formulario{
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+}
+.formulario form{
+    color: black;
+}
+.formulario>h4{
+    color: rgb(54, 101, 70);
+    text-align: center;
+}
+
+section>p{
+    font-size: 20px;
+}
+
+.btn{
+    background-color: rgb(54, 101, 70);
+    color: white;
+}
+
+
+input,select, textarea{
+    margin-bottom: 15px;
+
+}
+
+@media(max-width: 829px){
+    .grid-container{
+        display: block;
+    }
+    section>p{
+        font-size: 1em;
+    }
+    input,select, textarea{
+        margin-bottom: 10px;
+    
+    }
+}
+
