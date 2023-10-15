@@ -9,9 +9,11 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="loginUsuario.css"/>
+    <link rel="stylesheet" href="cadastro.css"/>
 
     <link rel="shortcut icon" href="../../assets/imgs/Logo/favicon.ico" type="image/x-icon" />
+
+    <script defer type="module" src="./formularios.js"></script>
     <title>REConecta Turismo</title>
   </head>
   <body>
@@ -64,19 +66,15 @@
     </header>
 
     <main>
-      <h2>Que bom ver você de novo!</h2>
-        <form>
-            <fieldset>
-                <label for="email">E-mail</label><input type="email" name="email">
-                <label for="senha">Senha</label><input type="password" name="senha">
-            </fieldset>
-        </form>
-        <div class="senha"><a href="#">Esqueceu sua senha?</a></div>
-        <div class="divButton">
-            <button class="btn btn-light" type="submit">Fazer login</button>
-            <p>Ainda não tem uma conta?</p>
-            <a href="#" id="cadastro">Cadastre-se</a>
-        </div>
+      <div class="seletorForm">
+        <select name="escolherForm" id="escolherForm" >
+          <option value="login">Fazer login</option>
+          <option value="cadastroUsuario">Cadastro de usuário</option>
+          <option value="cadastroDestino">Cadastro de destino</option>
+          <option value="cadastroPassagem">Cadastro de passagem</option>
+        </select>
+      </div>
+      <div class="formulario"></div>
     </main>
 
     <script

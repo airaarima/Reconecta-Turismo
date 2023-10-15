@@ -1,4 +1,4 @@
-export const LoginUsuario = () => {
+export const CadastroUsuario = () => {
     return `<div>
         <h2>Cadastre-se e aproveite o melhor da REConecta Turismo</h2>
         <form>

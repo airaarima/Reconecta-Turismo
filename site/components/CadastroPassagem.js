@@ -1,4 +1,4 @@
-export const LoginUsuario = () => {
+export const CadastroPassagem = () => {
     return `<div>
         <h2>Cadastro de Passagem</h2>
         <form> 
