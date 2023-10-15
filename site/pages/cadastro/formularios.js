@@ -1,7 +1,10 @@
-import {LoginUsuario, CadastroUsuario, CadastroPassagem, CadastroDestino} from "../../components/index.js";
+import {NavBar, LoginUsuario, CadastroUsuario, CadastroPassagem, CadastroDestino} from "../../components/index.js";
 
+const header = document.querySelector("header");
+header.innerHTML = NavBar();
 
 const formulario = document.querySelector(".formulario");
+formulario.innerHTML = LoginUsuario();
 
 const escolherForm = document.getElementById("escolherForm");
 
