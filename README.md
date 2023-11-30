@@ -3,4 +3,6 @@
 - Nesta atividade, deveríamos construir um pseudocódigo, através do VisualG, para simular o cadastro de usuário, cadastro de viagens, como também suas respectivas consultas.
 - Além disso, utilizando HTML, CSS e Bootstrap, deveríamos criar o protótipo do site, sendo obrigatório a apresentação das páginas HOME, DESTINO, PROMOÇÕES e CONTATO, estas deveriam ser responsivas/adaptáveis e navegáveis entre si.
 
+- Atividade Prática: Módulo 2 e 3
+
 ![site](https://github.com/airaarima/Reconecta-Turismo/assets/102906471/21c3036f-b47a-4322-80d2-a57df994b1f7)
